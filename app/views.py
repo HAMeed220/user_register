@@ -35,4 +35,3 @@ def Registration(request):
             return HttpResponse('Invalid')
     return render(request,'Registration.html',d)
 
-#ixmw swij vtxj vnfx
