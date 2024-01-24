@@ -16,10 +16,16 @@
     <h1>Hello, world!</h1>
 
     <nav class="nav bg-dark nav-dark">
-         <a href="{% url 'admin:index' %}" class="nav link">Admin Page</a>
-         <a href="{% url 'home' %}" class="nav link ">Home Page</a>
-         <a href="{% url 'Registration' %}" class="nav link">Registration</a>
-         <a href="{% url 'user_login' %}" class="nav link">user_login</a>
+         <a href="{% url 'admin:index' %}" class="nav-link">Admin Page</a>
+         <a href="{% url 'home' %}" class="nav-link ">Home Page</a>
+         <a href="{% url 'Registration' %}" class="nav-link">Registration</a>
+
+         {% if user.is_authenticated %}
+             <a href="{% url 'user_logout' %}" class="nav-link">Logout</a>
+             <a href="{% url 'profile_display' %}" class="nav-link">Profile</a>   
+         {% else %}
+             <a href="{% url 'user_login' %}" class="nav-link">Login</a>
+          {% endif %}
     </nav>
 
     <!-- Optional JavaScript; choose one of the two! -->
